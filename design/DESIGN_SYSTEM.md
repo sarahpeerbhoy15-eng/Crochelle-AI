@@ -1,7 +1,7 @@
-# Crochèlle Design System
+# Crochelle Design System
 
 ## Brand
-Crochèlle
+Crochelle
 
 ## AI Companion
 Willow

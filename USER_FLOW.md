@@ -2,7 +2,7 @@
 
 ## New User
 
-Open Crochèlle
+Open Crochelle
 
 ↓
 
@@ -36,7 +36,7 @@ Generate another pattern
 
 ## Returning User
 
-Open Crochèlle
+Open Crochelle
 
 ↓
 

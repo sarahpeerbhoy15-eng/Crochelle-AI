@@ -1,6 +1,6 @@
 --------------------------------
 
-🧶 Crochèlle AI
+🧶 Crochelle AI
 
 ✨ Willow is ready.
 

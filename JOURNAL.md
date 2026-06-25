@@ -16,13 +16,13 @@ Create the GitHub repository.
 
 ## What happened today?
 
-Today I officially started building **Crochèlle AI**.
+Today I officially started building **Crochelle AI**.
 
 Originally, the idea was simply an AI crochet pattern generator.
 
 After brainstorming, I realized the vision is much bigger.
 
-Crochèlle AI should become a complete platform that helps people:
+Crochelle AI should become a complete platform that helps people:
 
 * Learn crochet
 * Create custom patterns
@@ -50,7 +50,7 @@ I also:
 
 I want this project to become more than just another AI application.
 
-I want Crochèlle AI to become a platform that genuinely helps crochet creators while also serving as a flagship portfolio project for my software engineering journey.
+I want Crochelle AI to become a platform that genuinely helps crochet creators while also serving as a flagship portfolio project for my software engineering journey.
 
 ---
 

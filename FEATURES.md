@@ -1,4 +1,4 @@
-# 🧶 Crochèlle AI Features
+# 🧶 Crochelle AI Features
 
 
 # 🤖 AI Pattern Generator
@@ -166,7 +166,7 @@ Each card includes:
 * Time Taken
 * Yarn Used
 * Hook Size
-* "Made with Crochèlle AI"
+* "Made with Crochelle AI"
 
 Future Features
 

@@ -1,8 +1,8 @@
-# 🚀 Crochèlle MVP (Version 1)
+# 🚀 Crochelle MVP (Version 1)
 
 ## Goal
 
-Build the first working version of Crochèlle that allows users to generate beginner-friendly crochet patterns.
+Build the first working version of Crochelle that allows users to generate beginner-friendly crochet patterns.
 
 ---
 
