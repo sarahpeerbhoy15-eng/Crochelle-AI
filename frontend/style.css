@@ -1,0 +1,14 @@
+body{
+    background-color:#FFF9F7;
+    font-family:'Nunito',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+h1{
+    color:#4F4A45;
+    font-size:64px;
+}
