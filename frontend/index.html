@@ -1,41 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Crochelle</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<div class="container">
 
-    <h1>Crochelle</h1>
+<div class="app">
 
-    <h2>🌿 Meet Willow</h2>
+    <header class="topbar">
+        <div class="logo">
+            🌿 CROCHELLE
+        </div>
 
-    <p>
-        Describe any crochet idea and I'll turn it into a pattern.
-    </p>
+        <div class="search">
+            Search patterns...
+        </div>
 
-    <input
-        type="text"
-        placeholder="Describe your dream plush..."
-    >
+        <div class="profile">
+            Hello, Sarah!
+        </div>
+    </header>
 
-    <button>
-        🌸 Generate Pattern
-    </button>
+
+    <aside class="sidebar">
+
+        <div class="menu">🏠 Home</div>
+
+        <div class="menu">🧶 Patterns</div>
+
+        <div class="menu">🏛 Museum</div>
+
+        <div class="menu">👥 Community</div>
+
+        <div class="menu">🌱 Skill Tree</div>
+
+        <div class="menu">📖 Library</div>
+
+        <div class="menu">⚙ Settings</div>
+
+    </aside>
+
+
+    <main class="dashboard">
+
+        <div class="window-card">
+
+        <div class="window-header">
+
+            <span class="window-title">
+                GENERATOR.EXE
+            </span>
+
+            <div class="window-controls">
+
+    <div class="gold-icon">−</div>
+
+    <div class="gold-icon">□</div>
+
+    <div class="gold-icon">×</div>
 
 </div>
 
-</body>
+        </div>
 
+        <div class="window-body">
+
+            <div class="window-icon">
+                ✨
+            </div>
+
+            <h2>Generate Pattern</h2>
+
+            <p>
+                Describe your crochet idea and let Willow help bring it to life.
+            </p>
+
+            <button class="window-button">
+                Generate Pattern →
+            </button>
+
+        </div>
+
+    </div>
+
+        <div class="card">
+            <h2>Skill Tree</h2>
+            <p>Master every stitch.</p>
+        </div>
+
+        <div class="card">
+            <h2>Basket</h2>
+            <p>Current projects.</p>
+        </div>
+
+        <div class="card">
+            <h2>Museum</h2>
+            <p>Your finished creations.</p>
+        </div>
+
+        <div class="card">
+            <h2>Playlists</h2>
+            <p>Learn while crocheting.</p>
+        </div>
+
+        <div class="card">
+            <h2>Pattern Library</h2>
+            <p>Saved patterns.</p>
+        </div>
+
+    </main>
+
+
+    <aside class="rightbar">
+
+        <div class="panel">
+            <h3>Willow Corner</h3>
+            <p>Your companion lives here.</p>
+        </div>
+
+        <div class="panel">
+            <h3>Daily Reminder</h3>
+            <p>Take breaks and hydrate.</p>
+        </div>
+
+        <div class="panel">
+            <h3>Current Streak</h3>
+            <p>7 Days 🔥</p>
+        </div>
+
+    </aside>
+
+
+    <footer class="taskbar">
+
+        <button>🌸 Start</button>
+
+        <button>Crochelle</button>
+
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
 </html>
