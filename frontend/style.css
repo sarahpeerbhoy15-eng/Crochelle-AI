@@ -50,12 +50,6 @@ body{
 
     background:#FAF8F4;
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:28px;
-
     padding:35px;
 
 }
@@ -178,17 +172,17 @@ button{
         0 8px 18px rgba(0,0,0,.05),
         inset 0 0 0 1px rgba(255,255,255,.65);
 
+    cursor:pointer;    
     transition:.25s ease;
 
 }
 
 .window-card:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-6px) scale(1.01);
 
     box-shadow:
-        0 14px 28px rgba(0,0,0,.08),
-        inset 0 0 0 1px rgba(255,255,255,.8);
+        0 16px 30px rgba(0,0,0,.10);
 
 }
 
@@ -342,17 +336,13 @@ background-size:14px 14px;
 
 .window-button:hover{
 
-    background:linear-gradient(
-        to bottom,
-        #EFD57C 0%,
-        #DEB84C 45%,
-        #C69322 100%
-    );
+    transform:translateY(-2px) scale(1.02);
 
-    transform:translateY(-2px);
+    filter:brightness(1.06);
 
     box-shadow:
         inset 0 2px 0 rgba(255,255,255,.5),
+        inset 0 -2px 0 rgba(120,90,10,.15),
         0 8px 18px rgba(0,0,0,.12);
 
 }
@@ -361,8 +351,10 @@ background-size:14px 14px;
 
     transform:translateY(1px);
 
+    filter:brightness(.95);
+
     box-shadow:
-        inset 0 3px 8px rgba(0,0,0,.18);
+        inset 0 4px 8px rgba(0,0,0,.18);
 
 }
 
@@ -378,4 +370,84 @@ background-size:14px 14px;
     align-items:center;
 
     color:#B58D2D;
+}
+
+#generator-workspace{
+
+    display:none;
+
+}
+#home-workspace{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,minmax(260px,1fr));
+
+    gap:28px;
+
+    width:100%;
+
+}
+#generator-panel{
+
+    display:none;
+
+}
+
+.fade-in{
+
+    animation:fadeIn .35s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+#return-home{
+
+    background:none;
+
+    border:none;
+
+    color:#8A6A2D;
+
+    font-family:'Nunito',sans-serif;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+
+    padding:0;
+
+    transition:.2s;
+
+}
+
+#return-home:hover{
+
+    color:#D4AF37;
+
+    transform:translateX(-3px);
+
 }

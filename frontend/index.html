@@ -16,7 +16,7 @@
 <body>
 
 <div class="app">
-
+    
     <header class="topbar">
         <div class="logo">
             🌿 CROCHELLE
@@ -52,8 +52,8 @@
 
 
     <main class="dashboard">
-
-        <div class="window-card">
+    <div id="home-workspace">
+        <div class="window-card" id="generator-card">
 
         <div class="window-header">
 
@@ -117,12 +117,21 @@
             <h2>Pattern Library</h2>
             <p>Saved patterns.</p>
         </div>
+    </div>
+    <div id="generator-workspace">
+    <button id="return-home">
+        ← Return to Lobby
+    </button>
+    <h1>🧶 AI Studio</h1>
 
+    <p>Coming soon...</p>
+
+</div>
     </main>
 
 
     <aside class="rightbar">
-
+    <div id="home-panel">
         <div class="panel">
             <h3>Willow Corner</h3>
             <p>Your companion lives here.</p>
@@ -137,7 +146,25 @@
             <h3>Current Streak</h3>
             <p>7 Days 🔥</p>
         </div>
+    </div>
+    <div id="generator-panel">
 
+    <div class="panel">
+        <h3>🌿 Willow</h3>
+        <p>Welcome back, Sarah.</p>
+    </div>
+
+    <div class="panel">
+        <h3>Previous Chats</h3>
+        <p>No conversations yet.</p>
+    </div>
+
+    <div class="panel">
+        <h3>Pinned Prompt</h3>
+        <p>Nothing pinned.</p>
+    </div>
+
+</div>
     </aside>
 
 
@@ -149,9 +176,11 @@
 
     </footer>
 
-</div>
+
+
 
 <script src="script.js"></script>
+</div>
 
 </body>
 </html>
