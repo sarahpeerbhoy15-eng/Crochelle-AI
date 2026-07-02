@@ -754,17 +754,7 @@ background-size:14px 14px;
 /* WILLOW */
 /* ========================= */
 
-.willow-window{
 
-    background:#FCF8F2;
-
-    border:2px solid #D8C49A;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-}
 
 .willow-content{
 
@@ -776,19 +766,11 @@ background-size:14px 14px;
 
 .willow-avatar{
 
-    width:120px;
+    width:150px;
 
-    height:120px;
-
-    margin:auto;
+    height:150px;
 
     margin-bottom:18px;
-
-    border-radius:50%;
-
-    background:#EDF3EE;
-
-    border:2px solid #A8CBB7;
 
     display:flex;
 
@@ -796,33 +778,41 @@ background-size:14px 14px;
 
     align-items:center;
 
-    font-size:48px;
-
 }
 
-.willow-content h2{
+.willow-content{
 
-    color:#476051;
+    display:flex;
 
-    margin-bottom:18px;
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:24px 18px 10px;
 
 }
 
 .willow-note{
 
-    background:#FFFDF8;
+    position:relative;
 
-    border:2px solid #E7D6B1;
+    width:100%;
 
-    border-radius:16px;
+    background:#FFF8F0;
 
-    padding:18px;
+    border:1px solid #E9D7AF;
 
-    color:#6A5A46;
+    border-radius:6px;
 
-    line-height:1.7;
+    padding:20px;
 
-    font-style:italic;
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.05);
+
+    transform:rotate(-2deg);
+
+    margin-bottom:30px;
 
 }
 
@@ -872,5 +862,75 @@ background-size:14px 14px;
 .chat-item span{
 
     font-size:22px;
+
+}
+
+.tape{
+
+    position:absolute;
+
+    width:54px;
+
+    height:18px;
+
+    background:
+repeating-linear-gradient(
+45deg,
+rgba(255,255,255,.22) 0px,
+rgba(255,255,255,.22) 3px,
+transparent 3px,
+transparent 6px
+),
+#F3E3A4;
+
+    opacity:.92;
+
+    border-radius:3px;
+
+}
+
+.tape-left{
+
+    top:-9px;
+
+    left:28px;
+
+    transform:rotate(-8deg);
+
+}
+
+.tape-right{
+
+    top:-9px;
+
+    right:28px;
+
+    transform:rotate(10deg);
+
+}
+
+.willow-note p{
+
+    margin:0;
+
+    font-style:italic;
+
+    color:#6B5A46;
+
+}
+
+.willow-signature{
+
+    display:block;
+
+    margin-top:18px;
+
+    text-align:right;
+
+    color:#A1865D;
+
+    font-weight:700;
+
+    font-size:15px;
 
 }
