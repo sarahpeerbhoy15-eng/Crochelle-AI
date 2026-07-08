@@ -88,36 +88,77 @@ removeImage.addEventListener("click", () => {
 
 const generateButton = document.getElementById("generate-button");
 
-generateButton.addEventListener("click", () => {
+generateButton.addEventListener("click", async () => {
 
     const prompt = patternPrompt.value.trim();
 
     if(prompt === ""){
 
         alert("Tell Willow what you'd like to crochet first!");
-
         return;
 
     }
 
-    generateButton.textContent = "Willow is drafting...";
-
+    generateButton.textContent = "✦ Willow is drafting...";
     generateButton.disabled = true;
 
     willowMessage.innerHTML = `
-    Counting stitches...<br><br>
-    Give me a moment while I draft your pattern.
-    <span class="willow-signature">— Willow 🌿</span>
-`;
+        Counting stitches...<br><br>
+        Give me a moment while I draft your pattern.
+        <span class="willow-signature">— Willow 🌿</span>
+    `;
 
-setTimeout(() => {
+    try{
 
-    generatorWindow.style.display = "none";
-    welcomeSection.style.display = "none";
+        const response = await fetch("http://127.0.0.1:5000/generate", {
 
-    patternResult.style.display = "block";
-    patternResult.classList.add("fade-in");
+            method:"POST",
 
-}, 2000);
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify({
+                prompt:prompt
+            })
+
+        });
+
+        const data = await response.json();
+
+        if(!response.ok){
+            throw new Error(data.error);
+        }
+
+        generatorWindow.style.display = "none";
+        welcomeSection.style.display = "none";
+
+        patternResult.style.display = "block";
+        patternResult.classList.add("fade-in");
+
+        document.getElementById("result-content").textContent = data.pattern;
+
+        willowMessage.innerHTML = `
+            Your pattern is ready!<br><br>
+            I hope you love making it.
+            <span class="willow-signature">— Willow 🌿</span>
+        `;
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        generateButton.textContent = "Generate Pattern →";
+        generateButton.disabled = false;
+
+        willowMessage.innerHTML = `
+            I got a little tangled up...<br><br>
+            Could we try that again?
+            <span class="willow-signature">— Willow 🌿</span>
+        `;
+
+    }
 
 });
