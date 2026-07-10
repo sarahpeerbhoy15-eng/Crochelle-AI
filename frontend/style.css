@@ -1053,3 +1053,49 @@ transparent 6px
     line-height:1.8;
 
 }
+
+#result-content h1,
+#result-content h2{
+    color:#463A2B;
+    margin-top:32px;
+    margin-bottom:14px;
+}
+
+#result-content h1{
+    font-size:32px;
+}
+
+#result-content h2{
+    font-size:24px;
+}
+
+#result-content h3{
+    color:#7B6546;
+    font-size:19px;
+    margin-top:26px;
+    margin-bottom:10px;
+}
+
+#result-content p{
+    margin-bottom:16px;
+}
+
+#result-content ul,
+#result-content ol{
+    padding-left:24px;
+    margin-bottom:20px;
+}
+
+#result-content li{
+    margin-bottom:8px;
+}
+
+#result-content hr{
+    border:none;
+    border-top:1px solid #E3D2AD;
+    margin:28px 0;
+}
+
+#result-content strong{
+    color:#594936;
+}

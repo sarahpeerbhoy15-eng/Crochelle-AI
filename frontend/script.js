@@ -8,6 +8,7 @@ const generatorPanel = document.getElementById("generator-panel");
 const patternResult = document.getElementById("pattern-result");
 const generatorWindow = document.querySelector(".generator-window");
 const welcomeSection = document.querySelector(".welcome");
+const generateAnotherButton = document.getElementById("generate-another");
 
 generatorCard.addEventListener("click", () => {
 
@@ -92,12 +93,12 @@ generateButton.addEventListener("click", async () => {
 
     const prompt = patternPrompt.value.trim();
 
-    if(prompt === ""){
+    if(prompt === "" && !referenceImage.files[0]){
 
-        alert("Tell Willow what you'd like to crochet first!");
-        return;
+    alert("Tell Willow what you'd like to crochet or add a reference image first!");
+    return;
 
-    }
+}
 
     generateButton.textContent = "✦ Willow is drafting...";
     generateButton.disabled = true;
@@ -109,20 +110,22 @@ generateButton.addEventListener("click", async () => {
     `;
 
     try{
+        const formData = new FormData();
 
+formData.append("prompt", prompt);
+
+if(referenceImage.files[0]){
+
+    formData.append("image", referenceImage.files[0]);
+
+}
         const response = await fetch("http://127.0.0.1:5000/generate", {
 
-            method:"POST",
+    method:"POST",
 
-            headers:{
-                "Content-Type":"application/json"
-            },
+    body:formData
 
-            body:JSON.stringify({
-                prompt:prompt
-            })
-
-        });
+});
 
         const data = await response.json();
 
@@ -136,8 +139,8 @@ generateButton.addEventListener("click", async () => {
         patternResult.style.display = "block";
         patternResult.classList.add("fade-in");
 
-        document.getElementById("result-content").textContent = data.pattern;
-
+        document.getElementById("result-content").innerHTML = marked.parse(data.pattern);
+        
         willowMessage.innerHTML = `
             Your pattern is ready!<br><br>
             I hope you love making it.
@@ -160,5 +163,33 @@ generateButton.addEventListener("click", async () => {
         `;
 
     }
+
+});
+
+generateAnotherButton.addEventListener("click", () => {
+
+    patternResult.style.display = "none";
+
+    generatorWindow.style.display = "block";
+    welcomeSection.style.display = "block";
+
+    patternPrompt.value = "";
+
+    referenceImage.value = "";
+    imagePreview.src = "";
+    imagePreviewContainer.style.display = "none";
+
+    generateButton.textContent = "Generate Pattern →";
+    generateButton.disabled = false;
+
+    document.getElementById("result-content").innerHTML = "";
+
+    willowMessage.innerHTML = `
+        Hi Sarah,<br><br>
+        Ready to make something adorable today?
+        <span class="willow-signature">— Willow 🌿</span>
+    `;
+
+    generatorWorkspace.classList.add("fade-in");
 
 });
