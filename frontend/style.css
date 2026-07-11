@@ -1099,3 +1099,19 @@ transparent 6px
 #result-content strong{
     color:#594936;
 }
+
+.result-actions{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:14px;
+    margin-top:24px;
+}
+
+.result-actions .window-button{
+    margin:0;
+}
+
+#library-workspace{
+    display:none;
+}

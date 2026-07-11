@@ -9,6 +9,11 @@ const patternResult = document.getElementById("pattern-result");
 const generatorWindow = document.querySelector(".generator-window");
 const welcomeSection = document.querySelector(".welcome");
 const generateAnotherButton = document.getElementById("generate-another");
+const savePatternButton = document.getElementById("save-pattern");
+const libraryCard = document.getElementById("library-card");
+const libraryWorkspace = document.getElementById("library-workspace");
+const returnLibraryHome = document.getElementById("return-library-home");
+
 
 generatorCard.addEventListener("click", () => {
 
@@ -182,6 +187,9 @@ generateAnotherButton.addEventListener("click", () => {
     generateButton.textContent = "Generate Pattern →";
     generateButton.disabled = false;
 
+    savePatternButton.textContent = "♡ Save to Library";
+    savePatternButton.disabled = false;
+
     document.getElementById("result-content").innerHTML = "";
 
     willowMessage.innerHTML = `
@@ -193,3 +201,106 @@ generateAnotherButton.addEventListener("click", () => {
     generatorWorkspace.classList.add("fade-in");
 
 });
+
+savePatternButton.addEventListener("click", () => {
+
+    const patternContent = document.getElementById("result-content").innerHTML;
+    
+    const patternTitle =
+    document.querySelector("#result-content h1")?.textContent || "Untitled Pattern";
+    
+    const savedPatterns = JSON.parse(localStorage.getItem("savedPatterns")) || [];
+
+    savedPatterns.push({
+    title: patternTitle,
+    content: patternContent
+});
+
+    localStorage.setItem("savedPatterns", JSON.stringify(savedPatterns));
+
+    savePatternButton.textContent = "✓ Saved to Library";
+    savePatternButton.disabled = true;
+
+});
+
+libraryCard.addEventListener("click", () => {
+
+    homeWorkspace.style.display = "none";
+    homePanel.style.display = "none";
+
+    libraryWorkspace.style.display = "block";
+
+    libraryWorkspace.classList.add("fade-in");
+
+    loadLibrary();
+});
+
+returnLibraryHome.addEventListener("click", () => {
+
+    libraryWorkspace.style.display = "none";
+
+    homeWorkspace.style.display = "grid";
+    homePanel.style.display = "block";
+
+});
+
+function loadLibrary(){
+
+    const libraryPatterns = document.getElementById("library-patterns");
+
+    const savedPatterns =
+        JSON.parse(localStorage.getItem("savedPatterns")) || [];
+
+    libraryPatterns.innerHTML = "";
+
+    if(savedPatterns.length === 0){
+
+        libraryPatterns.innerHTML = `
+            <div class="library-empty">
+
+                <div class="window-icon">
+                    📚
+                </div>
+
+                <h2>Your library is empty</h2>
+
+                <p>
+                    Patterns you choose to save will appear here.
+                </p>
+
+            </div>
+        `;
+
+        return;
+    }
+
+    savedPatterns.forEach((pattern, index) => {
+
+        const patternCard = document.createElement("div");
+
+        patternCard.classList.add("library-pattern-card");
+
+        patternCard.innerHTML = `
+            <h3>${pattern.title}</h3>
+
+            <p>Open your saved crochet pattern.</p>
+        `;
+        patternCard.addEventListener("click", () => {
+
+    libraryWorkspace.style.display = "none";
+
+    generatorWorkspace.style.display = "block";
+
+    generatorWindow.style.display = "none";
+    welcomeSection.style.display = "none";
+
+    patternResult.style.display = "block";
+
+    document.getElementById("result-content").innerHTML = pattern.content;
+
+});
+        libraryPatterns.appendChild(patternCard);
+
+    });
+
+}
