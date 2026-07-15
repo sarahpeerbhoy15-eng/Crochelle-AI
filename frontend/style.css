@@ -1115,3 +1115,69 @@ transparent 6px
 #library-workspace{
     display:none;
 }
+
+#library-pattern-view{
+
+    display:none;
+
+}
+
+.library-pattern-card{
+
+    background:white;
+
+    border:2px solid #ead9b8;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    margin-bottom:18px;
+
+}
+
+.library-pattern-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.library-card-icon{
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+.library-pattern-card h3{
+
+    margin-bottom:10px;
+
+    color:#4b4037;
+
+}
+
+.library-preview{
+
+    color:#777;
+
+    line-height:1.6;
+
+    margin-bottom:18px;
+
+}
+
+.library-open{
+
+    color:#8da66f;
+
+    font-weight:700;
+
+}

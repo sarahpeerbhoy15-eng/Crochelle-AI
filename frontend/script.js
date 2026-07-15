@@ -13,7 +13,10 @@ const savePatternButton = document.getElementById("save-pattern");
 const libraryCard = document.getElementById("library-card");
 const libraryWorkspace = document.getElementById("library-workspace");
 const returnLibraryHome = document.getElementById("return-library-home");
-
+const libraryPatternView = document.getElementById("library-pattern-view");
+const libraryPatternContent = document.getElementById("library-pattern-content");
+const backToLibrary = document.getElementById("back-to-library");
+const libraryPatterns = document.getElementById("library-patterns");
 
 generatorCard.addEventListener("click", () => {
 
@@ -280,23 +283,41 @@ function loadLibrary(){
 
         patternCard.classList.add("library-pattern-card");
 
+        const content =
+    typeof pattern === "string"
+        ? pattern
+        : pattern.content;
+
+const title =
+    typeof pattern === "string"
+        ? "Untitled Pattern"
+        : pattern.title;
+
         patternCard.innerHTML = `
-            <h3>${pattern.title}</h3>
 
-            <p>Open your saved crochet pattern.</p>
-        `;
-        patternCard.addEventListener("click", () => {
+    <div class="library-card-icon">
+            🧶
+        </div>
 
-    libraryWorkspace.style.display = "none";
+        <h3>${title}</h3>
 
-    generatorWorkspace.style.display = "block";
+        <p class="library-preview">
+            ${content.replace(/<[^>]*>/g,"").substring(0,90)}...
+        </p>
 
-    generatorWindow.style.display = "none";
-    welcomeSection.style.display = "none";
+        <span class="library-open">
+            Open →
+        </span>
 
-    patternResult.style.display = "block";
+    `;
 
-    document.getElementById("result-content").innerHTML = pattern.content;
+    patternCard.addEventListener("click", () => {
+
+    libraryPatterns.style.display = "none";
+
+    libraryPatternView.style.display = "block";
+
+    libraryPatternContent.innerHTML = content;
 
 });
         libraryPatterns.appendChild(patternCard);
@@ -304,3 +325,13 @@ function loadLibrary(){
     });
 
 }
+
+backToLibrary.addEventListener("click", () => {
+
+    libraryPatternView.style.display = "none";
+
+    libraryPatterns.style.display = "block";
+
+    loadLibrary();
+
+});
