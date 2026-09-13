@@ -1181,3 +1181,24 @@ transparent 6px
     font-weight:700;
 
 }
+
+.library-actions{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:18px;
+}
+
+.library-delete{
+    border:1px solid #e5cfc4;
+    background:#fff7f3;
+    color:#a66b5b;
+    padding:7px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.library-delete:hover{
+    background:#f9e8e1;
+}

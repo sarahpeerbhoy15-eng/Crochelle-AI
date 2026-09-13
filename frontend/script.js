@@ -305,9 +305,15 @@ const title =
             ${content.replace(/<[^>]*>/g,"").substring(0,90)}...
         </p>
 
+        <div class="library-actions">
         <span class="library-open">
             Open →
         </span>
+
+        <button class="library-delete">
+            Delete
+        </button>
+        </div>
 
     `;
 
@@ -318,6 +324,22 @@ const title =
     libraryPatternView.style.display = "block";
 
     libraryPatternContent.innerHTML = content;
+
+});
+const deleteButton = patternCard.querySelector(".library-delete");
+
+deleteButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    savedPatterns.splice(index, 1);
+
+    localStorage.setItem(
+        "savedPatterns",
+        JSON.stringify(savedPatterns)
+    );
+
+    loadLibrary();
 
 });
         libraryPatterns.appendChild(patternCard);
